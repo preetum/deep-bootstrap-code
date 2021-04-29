@@ -1,0 +1,23 @@
+[
+{
+    "dataset" : "cifar5m",
+    "proj" : "c5m-sept4-big-fp32",
+    "arch" : ["mlp[2048,2048,2048]", "mlp[128,128,128]", "resnet18k", "vgg11_bn", "mCNN", "alexnet", "densenet40_32", "densenet40_12"],
+    "lr" : 0.1,
+    "opt" : "sgd",
+    "scheduler" : "cosine",
+
+    "[nsamps, iid]": [[5000, false], [10000, false], [25000, false], [50000, false], [50000, true]],
+    "nbatches": 39000, # 100 epochs for 50k samps
+    "batchsize" : 128,
+    "k" : 64,
+    "momentum" : 0.0,
+    "wd" : 0.0,
+    "noise" : 0.0,
+    "aug" : [0, 2],
+    "half" : false, 
+
+    # for multiple identical trials
+    "comment" : [0,1,2,3,4,5,6,7,8,9]
+}
+]
